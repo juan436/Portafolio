@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Villegas",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juan436/Portafolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juan436/Portafolio/issues"
+  },
+  "homepage": "https://github.com/juan436/Portafolio#readme"
+}
