@@ -1,6 +1,10 @@
  const mongoose = require('mongoose');
  const {Schema} = mongoose
 
- new Schema({
-    title: {}
+ const ProjectSchema = new Schema({
+    linkDeploy: {type: String, required: true},
+    imageProject:  {type: String, required: true},
+    archivoProject: {type: String, required: true}
  })
+
+ module.exports = mongoose.model('Project', ProjectSchema);

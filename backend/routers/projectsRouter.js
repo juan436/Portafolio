@@ -1,10 +1,23 @@
 const express = require('express')
 const routerProject = express.Router();
 
-routerProject.get('/', (req, res) => {
+const Project = require('../models/project')
 
-    res.send('Hello Juancho');
+routerProject.get('/', async (req, res) => {
+    try {
+        const projects = await Project.find();
+        console.log(projects);
+        res.json('received');
+    } catch (err) {
+        console.error(err);
+    }
+});
 
+routerProject.post('/crearProject', async (req, res) => {
+    const { linkDeploy,imageProject,archivoProject } = req.body;
+    const project = new Project({linkDeploy,imageProject,archivoProject});
+    await project.save();
+    return res.json(project);
 });
 
 
