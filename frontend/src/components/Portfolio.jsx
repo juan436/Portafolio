@@ -1,72 +1,82 @@
 import React from "react";
-import arrayDestruct from "../assets/portfolio/arrayDestruct.jpg";
-import installNode from "../assets/portfolio/installNode.jpg";
-import navbar from "../assets/portfolio/navbar.jpg";
-import reactParallax from "../assets/portfolio/reactParallax.jpg";
-import reactSmooth from "../assets/portfolio/reactSmooth.jpg";
-import reactWeather from "../assets/portfolio/reactWeather.jpg";
-
 
 const Portfolio = () => {
-
     const portfolios = [
         {
             id: 1,
-            src: arrayDestruct,
+            title: 'ES6 [ ARRAY ] DESTRUCTURING',
+            demoLink: '#',
+            codeLink: '#',
         },
         {
             id: 2,
-            src: reactParallax,
+            title: 'REACT PARALLAX SCROLLING',
+            demoLink: '#',
+            codeLink: '#',
         },
         {
             id: 3,
-            src: navbar,
+            title: 'RESPONSIVE NAV BAR',
+            demoLink: '#',
+            codeLink: '#',
         },
         {
             id: 4,
-            src: reactSmooth,
+            title: 'REACT SMOOTH SCROLLING',
+            demoLink: '#',
+            codeLink: '#',
         },
         {
             id: 5,
-            src: installNode,
+            title: 'Install Node & Build Server',
+            demoLink: '#',
+            codeLink: '#',
         },
         {
             id: 6,
-            src: reactWeather,
+            title: 'with forecast',
+            demoLink: '#',
+            codeLink: '#',
         },
     ];
+
+    const renderPortfolios = (title) => (
+        <div>
+            <p className="text-3xl font-bold p-2 ">
+                {title}
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0"> 
+                {portfolios.map(({ id, title, demoLink, codeLink }) => (
+                    <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
+                        <h3 className="text-white text-center py-4">{title}</h3>
+                        <div className="flex flex-col sm:flex-row items-center justify-around bg-gray-800 p-4">
+                            <a href={demoLink} className="w-full sm:w-1/3 px-6 py-3 m-4 bg-blue-500 text-white rounded hover:bg-blue-700 duration-200 text-center">
+                                Demo
+                            </a>
+                            <a href={codeLink} className="w-full sm:w-1/3 px-6 py-3 m-4 bg-green-500 text-white rounded hover:bg-green-700 duration-200 text-center">
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 
     return (
         <div
             name="portfolio"
-            className="bg-gradient-to-b from-gray-800 to-black text-white md:h-screen"
+            className="bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
         >
             <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className="pb-8">
                     <p className="text-4xl font-bold inline border-b-4 border-gray-500">
                         Portfolio
                     </p>
-                    <p className="py-6">Check out some of my work right here</p>
+                    <p className="py-6">Echa un vistazo a algunos de mis trabajos aquí:</p>
                 </div>
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-                    {portfolios.map(({ id, src }) => (
-                        <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
-                            <img
-                                src={src}
-                                alt=""
-                                className="rounded-md duration-200 hover:scale-105"
-                            />
-                            <div className="flex items-center justify-center">
-                                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                                    Demo
-                                </button>
-                                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                                    Code
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                {renderPortfolios("Full-Stack")}
+                {renderPortfolios("Backend")}
             </div>
         </div>
     );

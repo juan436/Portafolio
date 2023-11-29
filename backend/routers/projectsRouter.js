@@ -13,14 +13,16 @@ routerProject.get('/', async (req, res) => {
     }
 });
 
-routerProject.post('/crearProject', async (req, res) => {
-    const { linkDeploy,imageProject,archivoProject } = req.body;
-    const project = new Project({linkDeploy,imageProject,archivoProject});
+routerProject.post('/saveProject', async (req, res) => {
+    const { linkDeploy, linkRepository } = req.body;
+
+    const project = new Project({linkDeploy, linkRepository});
+    
     await project.save();
     return res.json(project);
 });
 
-
+ 
 module.exports = routerProject;
 
 
