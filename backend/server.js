@@ -12,9 +12,10 @@ app.set('port', port)
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use('/uploads', express.static('uploads'));
+
 
 // Routes
-
 const routerProject = require('./routers/projectsRouter')
 app.use('/api/projects',routerProject);
 
