@@ -8,13 +8,21 @@ const { UploadImage } = require('../middleware/UploadMulter')
 
 const {validatorBack,validatorFullStack } = require('../validations/validator')
 
-routerProject.get('/', async (req, res) => {
+routerProject.get('/getBackendProjects', async (req, res) => {
     try {
-        const projects = await projects.find();
-        console.log(projects);
-        res.json('received');
+        const projects = await ProjectBack.find();
+        res.json(projects);
     } catch (err) {
         console.error(err);
+    }
+});
+
+routerProject.get('/getFullStackProjects', async (req, res) => {
+    try {
+        const projects = await ProjectFull.find();
+        res.json(projects);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
 });
 
