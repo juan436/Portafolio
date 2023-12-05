@@ -1,11 +1,16 @@
 const express = require('express')
 const routerProject = express.Router();
 
-const Project = require('../models/project')
+const ProjectBack = require('../models/projectsBackend')
+const ProjectFull = require('../models/projectsFullStack')
+
+const { UploadImage } = require('../middleware/UploadMulter')
+
+const {validatorBack,validatorFullStack } = require('../validations/validator')
 
 routerProject.get('/', async (req, res) => {
     try {
-        const projects = await Project.find();
+        const projects = await projects.find();
         console.log(projects);
         res.json('received');
     } catch (err) {
@@ -13,16 +18,36 @@ routerProject.get('/', async (req, res) => {
     }
 });
 
-routerProject.post('/saveProject', async (req, res) => {
-    const { linkDeploy, linkRepository } = req.body;
+routerProject.post('/saveProjectBack',validatorBack, async (req, res) => {
+    const { title, description, linkRepository } = req.body;
 
-    const project = new Project({linkDeploy, linkRepository});
-    
+    const project = new ProjectBack({ title, description, linkRepository });
+
     await project.save();
     return res.json(project);
 });
 
- 
+routerProject.post('/saveProjectFull',  UploadImage.single('image'), validatorFullStack,  async (req, res) => {
+
+    if (!req.file) {
+        return res.status(400).json({ error: 'Do not provide an image' });
+    }
+
+    const { title, description, userTest, passTest, techSkills, linkRepository, linkDeploy } = req.body;
+    const image = req.file.filename;
+
+    const techSkillsArray = techSkills.split(',');
+
+    const projectData = { title, description, userTest, passTest, techSkills: techSkillsArray, linkRepository, linkDeploy, image };
+
+    const Project = new ProjectFull(projectData);
+
+    await Project.save();
+    return res.json(Project);
+});
+
+
+
 module.exports = routerProject;
 
 
