@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path');
+const cors = require('cors');
 const morgan = require('morgan')
 const port = process.env.PORT || 3001;
 
@@ -8,6 +9,7 @@ const app = express();
 
 // Settings
 app.set('port', port)
+app.use(cors());
 
 //Middlewares
 app.use(morgan('dev'));
