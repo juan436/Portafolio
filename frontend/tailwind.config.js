@@ -11,7 +11,7 @@ module.exports = {
       },
       fontSize: {
         'font-sm': '12px',
-      }
+      },
     },
   },
   plugins: [],
