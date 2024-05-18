@@ -57,7 +57,7 @@ const Portfolio = () => {
             <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className="pb-8">
                     <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-                        My Projects
+                        Full-Stack Projects
                     </p>
                     <p className="py-6">Echa un vistazo a algunos de mis trabajos aquí:</p>
                 </div>
@@ -79,7 +79,7 @@ const Portfolio = () => {
                     </div>
 
                     <div>
-                        <p className="text-3xl font-bold py-6">Extra Projects</p>
+                        <p className="text-3xl font-bold py-6">Backend Projects</p>
 
                         <Swiper
                             spaceBetween={50}
