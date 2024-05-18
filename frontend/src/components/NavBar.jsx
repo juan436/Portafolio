@@ -27,7 +27,7 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black sticky z-50 top-0">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black sticky z-40 top-0">
       <div>
         <a href="#home">
           <img src={logo} alt="Logo" width="50" />

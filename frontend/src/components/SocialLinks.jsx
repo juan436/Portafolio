@@ -50,23 +50,23 @@ const SocialLinks = () => {
     return (
         <>
             {/* Background overlay when menu is open */}
-            {isOpen && <div className="fixed inset-0 bg-black opacity-80 z-50"></div>}
+            {isOpen && <div className="fixed inset-0 bg-black opacity-90 z-40"></div>}
             
             {/* Menu Button for Small Screens */}
-            <div className={`lg:hidden fixed ${isOpen ? 'inset-0 flex items-center justify-center z-40' : 'top-1/2 left-0 transform -translate-y-1/2 z-40'}`}>
+            <div className={`lg:hidden fixed ${isOpen ? 'inset-0 flex items-center justify-center z-40' : 'top-1/2 left-0 transform -translate-y-1/2 z-30'}`}>
                 <button
                     onClick={(e) => {
                         e.stopPropagation();
                         setIsOpen(!isOpen);
                     }}
-                    className={`text-gray-300 bg-gray-700 p-2 rounded-full opacity-${isOpen ? '100' : '80'} hover:opacity-100 focus:outline-none z-40`}
+                    className={`text-gray-300 bg-gray-700 p-2 rounded-full opacity-${isOpen ? '100' : '80'} hover:opacity-100 focus:outline-none z-30`}
                 >
                     <div className="flex items-center justify-center w-10 h-10 bg-gray-500 rounded-full">
                         <span role="img" aria-label="menu" className="text-lg opacity-75">🌐</span>
                     </div>
                 </button>
                 {isOpen && (
-                    <div className="absolute inset-0 flex items-center justify-center z-40">
+                    <div className="absolute inset-0 flex items-center justify-center z-30">
                         <div className="relative w-48 h-48 flex items-center justify-center">
                             <ul className="absolute w-full h-full flex flex-wrap items-center justify-center">
                                 {links.map(({ id, child, href, download, text }, index) => {
