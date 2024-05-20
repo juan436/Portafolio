@@ -18,7 +18,7 @@ const NavBar = () => {
     },
     {
       id: 3,
-      link: "experience",
+      link: "skills",
     },
     {
       id: 4,
@@ -29,7 +29,7 @@ const NavBar = () => {
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black sticky z-40 top-0">
       <div>
-        <a href="#home">
+        <a href="/">
           <img src={logo} alt="Logo" width="50" />
         </a>
       </div>

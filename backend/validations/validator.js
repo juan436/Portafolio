@@ -8,7 +8,7 @@ const validatorBack = [
         .not().isEmpty(),
     check('description')
         .exists()
-        .isLength({ max: 400 })
+        .isLength({ max: 500 })
         .isString()
         .not().isEmpty(),
     check('linkRepository')
