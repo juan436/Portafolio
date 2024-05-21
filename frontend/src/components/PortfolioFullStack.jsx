@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import axios from 'axios';
 
 const PortfolioFullStack = () => {
@@ -31,11 +35,11 @@ const PortfolioFullStack = () => {
     };
 
     return (
-        <div name="portfolio" className="bg-gradient-to-b from-black to-gray-800 w-full text-white ">
+        <div name="FullStack" className="bg-gradient-to-b from-black to-gray-800 w-full text-white">
             <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className="pb-8">
                     <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-                        Full-Stack Projects
+                        Proyectos Full-Stack
                     </p>
                     <p className="py-6">Echa un vistazo a algunos de mis trabajos aquí:</p>
                 </div>
@@ -65,19 +69,16 @@ const PortfolioFullStack = () => {
                                                 </span>
                                             ))}
                                         </div>
-
                                         <div className="col-span-full flex flex-col items-start p-0.1 mb-5 lg:mb-10">
-                                            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white">User:{userTest}</p>
-                                            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white">Pass:{passTest}</p>
+                                            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white">User: {userTest}</p>
+                                            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white">Pass: {passTest}</p>
                                         </div>
                                     </div>
-
                                     <div className="col-span-full flex items-center justify-around bg-gray-800 p-2 mt-auto space-x-4">
-                                        <a href={codeLink} className="w-full sm:w-2/6 px-4 py-2 bg-green-500 text-white rounded hover:bg-green700 duration200 text-center">
+                                        <a href={codeLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-2/6 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 duration-200 text-center">
                                             Code
                                         </a>
-
-                                        <a href={codeDeploy} className="w-full sm:w-2/6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-green700 duration200 text-center">
+                                        <a href={codeDeploy} target="_blank" rel="noopener noreferrer" className="w-full sm:w-2/6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 duration-200 text-center">
                                             Demo
                                         </a>
                                     </div>

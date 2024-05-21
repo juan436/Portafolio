@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 function ProjectsBack() {
   return (
     <div className="flex flex-col min-h-screen">
-      <NavBar />
+      <NavBar showLinks={false} />
       <div className="flex-grow flex">
         <PortfolioBackend showPlusButton={false} className="flex-grow" />
       </div>

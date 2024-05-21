@@ -36,11 +36,11 @@ const PortfolioBackend = ({ showPlusButton, limitProjects }) => {
     };
 
     return (
-        <div name="portfolio" className="w-full bg-gradient-to-b from-gray-800 to-black text-white">
+        <div name="Backend" className="w-full bg-gradient-to-b from-gray-800 to-black text-white">
             <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className={`pb-8 flex items-center ${location.pathname === '/projectback' ? 'justify-center' : 'justify-start'}`}>
                     <p className={`text-4xl font-bold inline ${location.pathname !== '/projectback' && 'border-b-4 border-gray-500'}`}>
-                        Backend Projects
+                        Proyectos Backend
                     </p>
                     {showPlusButton && (
                         <span className="text-gray-400 text-2xl ml-2"><a href="/projectback">+</a></span>

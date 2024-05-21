@@ -12,7 +12,7 @@ import Footer from "../components/footer";
 function Main() {
   return (
     <div>
-      <NavBar />
+      <NavBar showLinks={true} />
       <Home />
       <About />
       <SocialLinks />
