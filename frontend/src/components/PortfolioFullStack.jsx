@@ -57,7 +57,7 @@ const PortfolioFullStack = () => {
                             <SwiperSlide key={id}>
                                 <div className="grid grid-cols-customsm sm:grid-cols-custom gap-2 items-start w-full sm:w-3/4 h-full p-1 rounded-lg mx-auto shadow-md shadow-gray-600">
                                     <div className="h-full p-1 rounded-lg mb-2 flex justify-center">
-                                        <img src={`http://localhost:3001/uploads/${image}`} alt="Descripción de la imagen" className="w-full sm:w-3/4 h-full rounded-lg border-2 border-transparent transition-colors duration-300 object-cover" />
+                                        <img src={`https://portafolio-dwdb.onrender.com/uploads/${image}`} alt="Descripción de la imagen" className="w-full sm:w-3/4 h-full rounded-lg border-2 border-transparent transition-colors duration-300 object-cover" />
                                     </div>
                                     <div className="flex flex-col justify-between h-full">
                                         <div>
