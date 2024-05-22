@@ -14,23 +14,20 @@ const About = () => {
         </div>
 
         <p className="text-xl mt-20">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius,
-          deserunt illum mollitia officiis qui exercitationem perferendis neque
-          quasi a recusandae necessitatibus tempora iusto! Blanditiis error
-          iste, totam fugiat recusandae rerum laborum perferendis molestiae
-          aperiam asperiores nemo. Magni dolor maxime debitis vitae, eaque hic
-          ab mollitia voluptatibus, a nostrum eveniet laborum!
+        Soy Juan Villegas, estudiante de décimo semestre de Ingeniería Telemática. 
+        Tengo un sólido conocimiento en diversas áreas de la telemática, incluyendo redes y desarrollo fullstack. 
+        Me especializo en el desarrollo backend utilizando tecnologías como Node.js, Express, JavaScript y PHP.
+        Destaco por mi capacidad para resolver problemas a través de diferentes 
+        enfoques y medios, además de poseer un excelente nivel de comunicación. 
+        Me siento cómodo y disfruto trabajando en equipo, lo cual considero fundamental para el éxito de cualquier proyecto.
         </p>
 
         <br />
 
         <p className="text-xl mb-10">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          pariatur, vel similique sint, nobis aspernatur ut praesentium
-          explicabo ipsam aliquid quasi laboriosam et culpa possimus repudiandae
-          quisquam ullam maiores ab unde. Fugiat odio mollitia nemo alias.
-          Commodi facilis atque nulla vero voluptatem explicabo. Quibusdam,
-          magni quo! Eum cupiditate debitis labore.
+        La investigación es una de mis pasiones; siempre estoy buscando aprender y descubrir nuevas cosas. 
+        Soy autodidacta y estoy comprometido con mi desarrollo profesional continuo, abierto tanto a reforzar 
+        mis conocimientos básicos como a explorar e implementar innovaciones.
         </p>
       </div>
     </div>
