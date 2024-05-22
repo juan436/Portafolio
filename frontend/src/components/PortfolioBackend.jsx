@@ -22,7 +22,7 @@ const PortfolioBackend = ({ showPlusButton, limitProjects }) => {
 
     const obtenerProyectosBackend = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/api/projects/getBackendProjects');
+            const response = await axios.get('https://portafolio-dwdb.onrender.com/api/projects/getBackendProjects');
             const proyectosBackend = response.data.map((proyecto) => ({
                 id: proyecto._id.toString(),
                 title: proyecto.title,

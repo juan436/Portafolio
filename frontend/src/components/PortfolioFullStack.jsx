@@ -15,7 +15,7 @@ const PortfolioFullStack = () => {
 
     const ObtenerprojectsFullStack = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/api/projects/getFullStackProjects');
+            const response = await axios.get('https://portafolio-dwdb.onrender.com/api/projects/getFullStackProjects');
             const projectsFS = response.data.map((project) => ({
                 id: project._id.toString(),
                 title: project.title,
