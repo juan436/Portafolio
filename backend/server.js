@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path');
 const cors = require('cors');
 const morgan = require('morgan')
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 4000;
 
 const { mongoose } = require('./database')
 const app = express();
