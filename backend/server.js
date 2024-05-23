@@ -18,7 +18,9 @@ app.use(cors());
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/uploads', express.static('uploads'));
+
+// Ruta para archivos estáticos
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 const routerProject = require('./routers/projectsRouter');
@@ -29,6 +31,7 @@ app.get('/', (req, res) => {
     res.send('Prueba de funcionamiento de backend 🖥️');
 });
 
+// Iniciar el servidor
 app.listen(app.get('port'), () => {
     console.log(`El servidor está escuchando en el puerto ${app.get('port')}`);
 });
