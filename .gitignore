@@ -5,9 +5,9 @@
 /frontend/node_modules
 /.pnp
 .pnp.js
-
 # uploads of image
 /backend/uploads/*
+/backend/portfolio-b3430-firebase-adminsdk-zpyeb-15525eeb79.json
 
 # testing
 /coverage

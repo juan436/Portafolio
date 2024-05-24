@@ -1,25 +1,14 @@
 const multer = require('multer');
-const { extname, join } = require('path');
+const { extname } = require('path');
 
-const CURRENT_DIR = __dirname;
 const MIMETYPES = ['image/jpeg', 'image/jpg', 'image/png'];
 
 const UploadImage = multer({
-  storage: multer.diskStorage({
-    destination: join(CURRENT_DIR, '../uploads'),
-    filename: (req, file, cb) => {
-      const extArchivo = extname(file.originalname);
-      const nombreArchivo = file.originalname.split(extArchivo)[0]
-        .split(extArchivo)[0]
-        .replace(/\s+/g, '_')
-        .toLowerCase();
-
-      cb(null, `${nombreArchivo}-${Date.now()}-${extArchivo}`);
-    },
-  }),
+  storage: multer.memoryStorage(), // Cambiar a almacenamiento en memoria
   fileFilter: (req, file, cb) => {
-    if (MIMETYPES.includes(file.mimetype)) cb(null, true);
-    else {
+    if (MIMETYPES.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
       cb(new Error('Tipo de archivo no permitido'), false);
     }
   },
@@ -28,4 +17,4 @@ const UploadImage = multer({
   }
 });
 
-module.exports = {UploadImage, CURRENT_DIR};
+module.exports = { UploadImage };
