@@ -29,7 +29,7 @@ const SocialLinks = () => {
             id: 4,
             child: <BsFillPersonLinesFill size={30} />,
             text: "Resume",
-            href: "https://firebasestorage.googleapis.com/v0/b/portfolio-b3430.appspot.com/o/curriculum%2FCurriculum%20Juan%20Villegas.pdf?alt=media&token=f7f059c9-4867-4c33-9772-973350090bc3",
+            href: "https://firebasestorage.googleapis.com/v0/b/portfolio-b3430.appspot.com/o/curriculum%2Fresumen%20curricular.pdf?alt=media&token=e8d98a4d-4778-4538-86ac-829082b08856",
             download: true,
         },
     ];
