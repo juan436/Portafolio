@@ -14,11 +14,8 @@ const Contact = () => {
       method: form.method,
       body: formData,
     }).then(() => {
-      // Show the success message
       setMessageSent(true);
-      // Reset the form fields
       form.reset();
-      // Hide the success message after 3 seconds
       setTimeout(() => {
         setMessageSent(false);
       }, 3000);

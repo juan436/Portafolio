@@ -29,7 +29,7 @@ const SocialLinks = () => {
             id: 4,
             child: <BsFillPersonLinesFill size={30} />,
             text: "Resume",
-            href: "/public/curriculum/aa.pdf",
+            href: "/public/curriculum/Curriculum Juan Villegas.pdf",
             download: true,
         },
     ];
@@ -49,10 +49,8 @@ const SocialLinks = () => {
 
     return (
         <>
-            {/* Background overlay when menu is open */}
             {isOpen && <div className="fixed inset-0 bg-black opacity-90 z-40"></div>}
             
-            {/* Menu Button for Small Screens */}
             <div className={`lg:hidden fixed ${isOpen ? 'inset-0 flex items-center justify-center z-40' : 'top-1/2 left-0 transform -translate-y-1/2 z-30'}`}>
                 <button
                     onClick={(e) => {
@@ -71,8 +69,8 @@ const SocialLinks = () => {
                             <ul className="absolute w-full h-full flex flex-wrap items-center justify-center">
                                 {links.map(({ id, child, href, download, text }, index) => {
                                     const angle = (index / links.length) * 2 * Math.PI;
-                                    const x = 80 * Math.cos(angle); // Adjust radius as needed
-                                    const y = 80 * Math.sin(angle); // Adjust radius as needed
+                                    const x = 80 * Math.cos(angle);
+                                    const y = 80 * Math.sin(angle);
                                     return (
                                         <li
                                             key={id}
@@ -91,8 +89,8 @@ const SocialLinks = () => {
                                                 rel="noreferrer"
                                                 onClick={() => setIsOpen(false)}
                                             >
-                                                <span className="hidden lg:inline">{text}</span> {/* Mostrar solo el texto en pantallas grandes */}
-                                                <span className="lg:hidden">{child}</span> {/* Mostrar solo el icono en pantallas pequeñas */}
+                                                <span className="hidden lg:inline">{text}</span>
+                                                <span className="lg:hidden">{child}</span>
                                             </a>
                                         </li>
                                     );
@@ -118,8 +116,8 @@ const SocialLinks = () => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <span className="hidden lg:inline">{text}</span> {/* Mostrar solo el texto en pantallas grandes */}
-                                {child} {/* Mostrar solo el icono */}
+                                <span className="hidden lg:inline">{text}</span> 
+                                {child}
                             </a>
                         </li>
                     ))}

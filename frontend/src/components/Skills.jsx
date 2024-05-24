@@ -6,12 +6,11 @@ import html from "../assets/html.png";
 import css from "../assets/css.png";
 import reactImage from "../assets/react.png";
 import nodejs from "../assets/node.png";
-// import express from "../assets/express.png";
 import php from "../assets/php.png";
 import tailwind from "../assets/tailwind.png";
 import github from "../assets/github.png";
 import nextjs from "../assets/nextjs.png";
-// import docker from "../assets/docker.png";
+import docker from "../assets/docker.png";
 
 const Skill = () => {
   const techs = [
@@ -45,42 +44,36 @@ const Skill = () => {
       title: "Node.js",
       style: "shadow-green-500",
     },
-    // {
-    //   id: 6,
-    //   src: express,
-    //   title: "Express",
-    //   style: "shadow-green-600",
-    // },
     {
-      id: 7,
+      id: 6,
       src: php,
       title: "PHP",
       style: "shadow-purple-500",
     },
     {
-      id: 8,
+      id: 7,
       src: tailwind,
       title: "Tailwind",
       style: "shadow-sky-400",
     },
     {
-      id: 9,
+      id: 8,
       src: github,
       title: "GitHub",
       style: "shadow-gray-400",
     },
     {
-      id: 10,
+      id: 9,
       src: nextjs,
       title: "Next JS",
       style: "shadow-white",
     },
-    // {
-    //   id: 11,
-    //   src: docker, // Agrega Docker a la lista de tecnologías
-    //   title: "Docker",
-    //   style: "shadow-indigo-500", // Estilo para Docker
-    // },
+    {
+      id: 10,
+      src: docker,
+      title: "Docker",
+      style: "shadow-indigo-500",
+    },
   ];
 
   return (
