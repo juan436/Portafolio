@@ -49,7 +49,7 @@ const PortfolioFullStack = () => {
                         slidesPerView={1}
                         navigation
                         pagination={{ clickable: true }}
-                        scrollbar={{ draggable: true }}
+                        scrollbar={{ draggable: true, el: '.swiper-scrollbar' }}
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
                     >
@@ -74,7 +74,7 @@ const PortfolioFullStack = () => {
                                             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white">Pass: {passTest}</p>
                                         </div>
                                     </div>
-                                    <div className="col-span-full flex items-center justify-around bg-gray-800 p-2 mt-auto space-x-4">
+                                    <div className="col-span-full flex items-center justify-around bg-gray-1000 p-2 mt-auto space-x-4">
                                         <a href={codeLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-2/6 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 duration-200 text-center">
                                             Code
                                         </a>

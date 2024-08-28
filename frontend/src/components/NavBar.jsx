@@ -37,7 +37,7 @@ const NavBar = ({ showLinks }) => {
           <img src={logo} alt="Logo" width="50" />
         </a>
       </div>
-      
+
       {showLinks && (
         <ul className="hidden md:flex">
           {links.map(({ id, link }) => (
