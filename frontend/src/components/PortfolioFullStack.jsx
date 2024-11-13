@@ -37,6 +37,18 @@ const SkeletonLoader = () => (
 const PortfolioFullStack = () => {
     const [projectsFS, setProjectsFS] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [retryCount, setRetryCount] = useState(0);
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            if (loading && retryCount < 10) {
+                setRetryCount(retryCount + 1);
+                ObtenerprojectsFullStack();
+            }
+        }, 1000);
+
+        return () => clearTimeout(timeoutId);
+    }, [loading, retryCount]);
 
     useEffect(() => {
         ObtenerprojectsFullStack();
@@ -58,10 +70,9 @@ const PortfolioFullStack = () => {
             }));
 
             setProjectsFS(projectsFS);
+            setLoading(false);
         } catch (error) {
             console.error('Error fetching data:', error);
-        } finally {
-            setLoading(false);
         }
     };
 
