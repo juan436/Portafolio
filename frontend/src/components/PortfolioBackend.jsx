@@ -63,7 +63,7 @@ const PortfolioBackend = ({ showPlusButton, limitProjects }) => {
                 </div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
                     {loading ? (
-                        Array.from({ length: 6 }).map((_, index) => <SkeletonLoader key={index} />)
+                        Array.from({ length: 3 }).map((_, index) => <SkeletonLoader key={index} />)
                     ) : (
                         displayedProjects.map(({ id, title, description, codeLink }) => (
                             <div key={id} className="shadow-md shadow-gray-600 rounded-lg p-4 flex flex-col justify-between">
