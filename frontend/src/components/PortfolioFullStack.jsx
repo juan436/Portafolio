@@ -7,6 +7,33 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import axios from 'axios';
 
+const SkeletonLoader = () => (
+    <div className="grid grid-cols-customsm sm:grid-cols-custom gap-2 items-start w-full sm:w-3/4 h-full p-1 rounded-lg mx-auto shadow-md shadow-gray-600 animate-pulse">
+        <div className="h-full p-1 rounded-lg mb-2 flex justify-center bg-gray-700">
+            <div className="w-full sm:w-3/4 h-full rounded-lg bg-gray-600"></div>
+        </div>
+        <div className="flex flex-col justify-between h-full">
+            <div>
+                <div className="h-6 bg-gray-600 mb-4 rounded"></div>
+                <div className="h-4 bg-gray-600 mb-2 rounded"></div>
+                <div className="flex flex-wrap">
+                    <div className="h-4 bg-gray-600 rounded-full px-2 py-1 mr-1 mb-1"></div>
+                    <div className="h-4 bg-gray-600 rounded-full px-2 py-1 mr-1 mb-1"></div>
+                    <div className="h-4 bg-gray-600 rounded-full px-2 py-1 mr-1 mb-1"></div>
+                </div>
+            </div>
+            <div className="col-span-full flex flex-col items-start p-0.1 mb-5 lg:mb-10">
+                <div className="h-4 bg-gray-600 mb-2 rounded"></div>
+                <div className="h-4 bg-gray-600 mb-2 rounded"></div>
+            </div>
+        </div>
+        <div className="col-span-full flex items-center justify-around bg-gray-1000 p-2 mt-auto space-x-4">
+            <div className="w-full sm:w-2/6 h-10 bg-gray-600 rounded"></div>
+            <div className="w-full sm:w-2/6 h-10 bg-gray-600 rounded"></div>
+        </div>
+    </div>
+);
+
 const PortfolioFullStack = () => {
     const [projectsFS, setProjectsFS] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -49,9 +76,7 @@ const PortfolioFullStack = () => {
                 </div>
                 <div>
                     {loading ? (
-                        <div className="flex justify-center items-center h-64">
-                            <p className="text-white">Cargando proyectos...</p>
-                        </div>
+                        <SkeletonLoader />
                     ) : (
                         <Swiper
                             modules={[Navigation]}
