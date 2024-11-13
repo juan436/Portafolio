@@ -16,8 +16,7 @@ const Home = () => {
           </h2>
 
           <p className="text-gray-500 py-4 max-w-md">
-            Soy un studiante en proceso de Ingeniería Telemática, tengo conocimientos de programación front-end y back-end,
-            tengo capacidad de resolución de problemas y buen desempeño.
+          Programador Full Stack con enfoque en desarrollo eficiente y escalable. Combino experiencia en front-end y back-end para crear soluciones de alto impacto y adaptadas a las necesidades del cliente.
           </p>
 
           <div>

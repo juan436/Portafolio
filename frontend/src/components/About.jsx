@@ -14,20 +14,13 @@ const About = () => {
         </div>
 
         <p className="text-xl mt-20">
-        Soy Juan Villegas, estudiante de décimo semestre de Ingeniería Telemática. 
-        Tengo un sólido conocimiento en diversas áreas de la telemática, incluyendo redes y desarrollo fullstack. 
-        Me especializo en el desarrollo backend utilizando tecnologías como Node.js, Express, JavaScript y PHP.
-        Destaco por mi capacidad para resolver problemas a través de diferentes 
-        enfoques y medios, además de poseer un excelente nivel de comunicación. 
-        Me siento cómodo y disfruto trabajando en equipo, lo cual considero fundamental para el éxito de cualquier proyecto.
+        Soy Juan Villegas, programador Full Stack con experiencia en tecnologías como Next.js, React, Node.js, Express, PHP y Laravel, así como en bases de datos relacionales y no relacionales. Actualmente, curso el décimo semestre de Ingeniería Telemática en la Universidad Centroccidental “Lisandro Alvarado” UCLA lo que me ha permitido adquirir un sólido conocimiento en redes y desarrollo de software.
         </p>
 
         <br />
 
         <p className="text-xl mb-10">
-        La investigación es una de mis pasiones; siempre estoy buscando aprender y descubrir nuevas cosas. 
-        Soy autodidacta y estoy comprometido con mi desarrollo profesional continuo, abierto tanto a reforzar 
-        mis conocimientos básicos como a explorar e implementar innovaciones.
+        Destaco por mi capacidad para resolver problemas desde distintos enfoques y por mi habilidad para comunicarme efectivamente, cualidades que considero esenciales para el éxito en proyectos de equipo. La investigación y el aprendizaje continuo son mi pasión; disfruto explorando nuevas tecnologías y aplicando innovaciones que optimicen mis desarrollos. Soy autodidacta, comprometido con mi crecimiento profesional y siempre dispuesto a reforzar y expandir mis conocimientos.
         </p>
       </div>
     </div>
