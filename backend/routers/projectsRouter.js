@@ -17,16 +17,15 @@ routerProject.get('/getBackendProjects', async (req, res) => {
         res.status(500).json({ message: 'Error al obtener los proyectos' });
     }
 });
-
 routerProject.get('/getFullStackProjects', async (req, res) => {
     try {
-        const projects = await ProjectFull.find();
+        const projects = await ProjectFull.find().sort({ _id: -1 });
         res.json(projects);
     } catch (err) {
+        console.error('Error al obtener los proyectos:', err);
         res.status(500).json({ message: 'Error al obtener los proyectos' });
     }
 });
-
 routerProject.post('/saveProjectBack', validatorBack, async (req, res) => {
     const { title, description, linkRepository } = req.body;
 
