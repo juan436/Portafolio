@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -45,9 +46,10 @@ const PortfolioFullStack = () => {
                 </div>
                 <div>
                     <Swiper
+                        modules={[Navigation]} // Añade el módulo de navegación aquí
                         spaceBetween={50}
                         slidesPerView={1}
-                        navigation
+                        navigation // Activa la navegación
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true, el: '.swiper-scrollbar' }}
                         onSwiper={(swiper) => console.log(swiper)}
