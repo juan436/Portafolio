@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom'; // Importa useLocation para obtener la ruta actual
+import { useLocation } from 'react-router-dom';
+
+const SkeletonLoader = () => (
+    <div className="shadow-md shadow-gray-600 rounded-lg p-4 flex flex-col justify-between animate-pulse">
+        <div>
+            <div className="h-6 bg-gray-600 mb-4 rounded"></div>
+            <div className="h-4 bg-gray-600 mb-2 rounded"></div>
+        </div>
+        <div className="flex items-center justify-around bg-gray-800 p-2 mt-auto">
+            <div className="w-full h-10 bg-gray-600 rounded"></div>
+        </div>
+    </div>
+);
 
 const PortfolioBackend = ({ showPlusButton, limitProjects }) => {
     const [projectsB, setProjects] = useState([]);
-    const location = useLocation(); // Obtiene la ruta actual
+    const [loading, setLoading] = useState(true);
+    const location = useLocation();
     const [displayedProjects, setDisplayedProjects] = useState([]);
 
     useEffect(() => {
@@ -32,6 +45,8 @@ const PortfolioBackend = ({ showPlusButton, limitProjects }) => {
             setProjects(proyectosBackend);
         } catch (error) {
             console.error('Error al obtener los datos:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -47,24 +62,28 @@ const PortfolioBackend = ({ showPlusButton, limitProjects }) => {
                     )}
                 </div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-                    {displayedProjects.map(({ id, title, description, codeLink }) => (
-                        <div key={id} className="shadow-md shadow-gray-600 rounded-lg p-4 flex flex-col justify-between">
-                            <div>
-                                <h3 className="text-white text-center mb-4">{title}</h3>
-                                <p className="text-xs text-gray-300 text-center mb-2">{description}</p>
+                    {loading ? (
+                        Array.from({ length: 6 }).map((_, index) => <SkeletonLoader key={index} />)
+                    ) : (
+                        displayedProjects.map(({ id, title, description, codeLink }) => (
+                            <div key={id} className="shadow-md shadow-gray-600 rounded-lg p-4 flex flex-col justify-between">
+                                <div>
+                                    <h3 className="text-white text-center mb-4">{title}</h3>
+                                    <p className="text-xs text-gray-300 text-center mb-2">{description}</p>
+                                </div>
+                                <div className="flex items-center justify-around bg-gray-800 p-2 mt-auto">
+                                    <a
+                                        href={codeLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green700 duration-200 text-center"
+                                    >
+                                        Code
+                                    </a>
+                                </div>
                             </div>
-                            <div className="flex items-center justify-around bg-gray-800 p-2 mt-auto">
-                                <a
-                                    href={codeLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green700 duration-200 text-center"
-                                >
-                                    Code
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+                        ))
+                    )}
                 </div>
             </div>
         </div>
